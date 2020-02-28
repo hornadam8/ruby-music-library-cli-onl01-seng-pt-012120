@@ -29,6 +29,7 @@ class MusicLibraryController
   end
   
   def sorted_songs
+    
   
   def list_artists
     artists_sorted_by_name = Artist.all.sort{|artist1,artist2| artist1.name <=> artist2.name}
