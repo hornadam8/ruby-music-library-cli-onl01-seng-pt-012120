@@ -45,6 +45,11 @@ class MusicLibraryController
     artist_songs_sorted.each.with_index(1){|song,index| puts "#{index}. #{song.name} - #{song.genre.name}"}
   end
   
-  
+  def list_songs_by_genre
+    puts "Please enter the name of an genre:"
+    genre = gets.strip
+    genre_songs_sorted = Artist.find_or_create_by_name(artist).songs.sort{|song1,song2| song1.name <=> song2.name}
+    genre_songs_sorted.each.with_index(1){|song,index| puts "#{index}. #{song.name} - #{song.artist.name}"}
+  end
   
 end
