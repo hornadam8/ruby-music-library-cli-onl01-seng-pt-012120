@@ -54,7 +54,6 @@ class MusicLibraryController
   
   def play_song
     puts "Which song number would you like to play?"
-    list_songs
     i = gets.to_i
     puts "Playing #{list_songs[i]} by #{list_songs[i].artist.name}"
   end
