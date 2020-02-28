@@ -60,6 +60,6 @@ class MusicLibraryController
   def play_song
     puts "Which song number would you like to play?"
     i = gets.to_i
-    puts "Playing #{sorted_songs[i].name} by #{sorted_songs[i].artist.name}"
+    puts "Playing #{sorted_songs[i-1].name} by #{sorted_songs[i-1].artist.name}"
   end
 end
