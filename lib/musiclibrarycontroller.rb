@@ -56,6 +56,7 @@ class MusicLibraryController
     puts "Which song number would you like to play?"
     list_songs
     song_number = gets.strip
-    
+    songs_sorted_by_name = Song.all.sort{|song1,song2| song1.name <=> song2.name}
+    songs_sorted_by_name[song_number + 1]
   end
 end
