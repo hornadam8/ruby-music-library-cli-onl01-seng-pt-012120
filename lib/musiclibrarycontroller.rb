@@ -53,9 +53,8 @@ class MusicLibraryController
   end
   
   def play_song
+    puts "Which song number would you like to play?"
     list_songs
-    puts "Please choose a song"
-    song = gets.strip
-    Song.find_or_create_by_name(song)
+    song_number = gets.strip
   end
 end
