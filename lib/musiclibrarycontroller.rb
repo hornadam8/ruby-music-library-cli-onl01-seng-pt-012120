@@ -20,7 +20,7 @@ class MusicLibraryController
       puts "What would you like to do?"
       com = gets.strip
       
-      if com == "list_songs"
+      case input
         list_songs
       end
     end
