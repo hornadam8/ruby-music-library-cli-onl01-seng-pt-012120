@@ -29,8 +29,9 @@ class MusicLibraryController
   end
   
   def sorted_songs
-    
-    songs_sorted_by_name.each.with_index(1){|song,index| puts "#{index}. #{son
+    songs_sorted_by_name = Song.all.sort{|song1,song2| song1.name <=> song2.name}
+    songs_sorted_by_name.each.with_index(1){|song,index| song}.collect
+  end
   
   def list_artists
     artists_sorted_by_name = Artist.all.sort{|artist1,artist2| artist1.name <=> artist2.name}
@@ -59,6 +60,6 @@ class MusicLibraryController
   def play_song
     puts "Which song number would you like to play?"
     i = gets.to_i
-    puts "Playing #{list_songs[i]} by #{list_songs[i].artist.name}"
+    puts "Playing #{sorted_songs[i]} by #{sorted_songs[i].artist.name}"
   end
 end
